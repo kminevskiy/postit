@@ -1,14 +1,14 @@
-<h3><%= "#{current_user.username}\'s profile" %></h3>
+<h3><%= "#{@user.username}\'s profile" %></h3>
 <p class="user-info-details">
   <span class="user-detail">Username:</span>
-  <span><%= current_user.username %></span>
+  <span><%= @user.username %></span>
   <br/>
   <span class="user-detail">Time zone:</span>
   <span>Moscow</span>
   <br/>
 </p>
 
-<h5><%= current_user.username %>'s Activity</h5>
+<h5><%= @user.username %>'s Activity</h5>
 
 <ul class="nav nav-tabs">
   <li class="<%= "active" if params[:tab].nil? %>">

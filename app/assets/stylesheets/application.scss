@@ -143,3 +143,23 @@ div.comment_votes {
     display: block;
   }
 }
+
+[type="submit"] {
+  display: block;
+}
+
+.navbar .nav .new-post {
+  color: #fff;
+  padding: 2px 10px;
+  text-shadow: none;
+  margin-left: 15px;
+}
+
+.navbar .nav .new-post:hover {
+  color: #fff;
+  background: #51a351;
+}
+
+.dropdown-menu > li > a.new-category-btn {
+  font-weight: bold;
+}
