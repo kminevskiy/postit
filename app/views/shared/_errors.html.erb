@@ -1,0 +1,11 @@
+<% if errors.any? %>
+  <div class="alert alert-error">
+     <h5>There were <%= errors.size %> <%= "error".pluralize(errors.size) %>:</h5>
+     <ul>
+      <% errors.full_messages.each do |e| %>
+        <li><%= e %></li>
+      <% end %>
+     </ul>
+   </div>
+<% end %>
+

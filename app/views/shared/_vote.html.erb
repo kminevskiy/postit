@@ -1,0 +1,14 @@
+<div class="votes">
+  <% if logged_in? %>
+    <%= link_to create_vote_path(obj, vote: true), method: "post" do %>
+      <i class="icon-arrow-up"></i>
+    <% end %>
+  <% end %>
+  <span><%= pluralize(obj.total_votes, "vote") %></span>
+  <% if logged_in? %>
+    <%= link_to create_vote_path(obj, vote: false), method: "post" do %>
+      <i class="icon-arrow-down"></i>
+    <% end %>
+  <% end %>
+</div>
+

@@ -1,0 +1,18 @@
+<%= render "shared/vote", obj: post %>
+
+<div class="post">
+    <%= render post.categories %>
+  <p class="post-id">Post #<%= post.id %></p>
+  <p>Post name: <%= post.title %></p>
+  <p>Post URL: <%= link_to post.title, format_url(post.url) %></p>
+  <p>Post description: <%= post.description %></p>
+  <p>
+    <span class="quiet">posted by</span> <%= link_to post.creator.username, user_path(post.creator) %>
+    <small>at <%= display_datetime(post.created_at.localtime) %></small>
+  </p>
+  <% if logged_in? %>
+    <%= link_to "Edit", edit_post_path(post), class: "edit-post" %>
+  <% end %>
+  <%= link_to "#{post.comments.size} comments", post_path(post) %>
+</div>
+

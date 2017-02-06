@@ -1,0 +1,33 @@
+<p class="pull-right">
+  <%= link_to "[edit this post]", edit_post_path(@post) %>
+</p>
+
+<%= render @post.categories %>
+
+<%= render "shared/content_title", title: @post.title %>
+
+<ul class="post-info">
+  <li>Title: <%= @post.title %></li>
+  <li>Description: <%= @post.description %></li>
+  <li>URL: <%= @post.url %></li>
+</ul>
+
+<% if logged_in? %>
+  <h5>Create comment</h5>
+  <%= form_for [@post, @comment] do |f| %>
+    <%= render "shared/errors", errors: @comment.errors %>
+    <%= f.text_area :body %>
+    <br/>
+    <%= f.submit "Create comment", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+
+<% if @post.comments.any? %>
+  <h5>Comments:</h5>
+  <ul>
+    <% @post.comments.reverse.each do |comment| %>
+      <%= render "shared/vote", obj: comment %>
+      <%= render "posts/comment", comment: comment, show_post: false %>
+    <% end %>
+  </ul>
+<% end %>

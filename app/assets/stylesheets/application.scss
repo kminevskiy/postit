@@ -14,7 +14,7 @@
 
  @import "bootstrap";
 
- .container {
+.container {
   margin-left: 135px
 }
 
@@ -26,12 +26,16 @@
   color: #ababab;
 }
 
+h3 {
+  color: #999;
+}
+
 div.nav_item {
   margin-left: 25px;
   float: left;
 }
 
-.label  {
+.label, .badge  {
   a, a:hover, a:focus {
     color: #fff;
     text-decoration: none;
@@ -42,3 +46,100 @@ div.comment_votes {
   padding: 10px;
 }
 
+#main {
+  margin: 30px 30px 30px 135px;
+}
+
+.post, .votes {
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  width: 50%;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(211, 211, 211, 0.18);
+  float: left;
+}
+
+.post-id {
+  margin: 10px 0;
+}
+
+.alert-error {
+  width: 30%;
+}
+
+.field_with_errors {
+  border-color: #BD1F00;
+}
+
+.edit-post {
+  display: block;
+}
+
+.categories-menu {
+  position: absolute;
+  left: 400px;
+}
+
+.categories-menu ul {
+  list-style: none;
+  padding: 0 10px;
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  display: none;
+  background: #fff;
+  width: 80%;
+  box-shadow: 0 0.3px 0.5px 0.5px rgba(0, 0, 0, 0.29);
+
+  li {
+    margin: 5px 0;
+  }
+}
+
+.categories-menu:hover {
+}
+
+.categories-menu:hover ul {
+  display: block;
+}
+
+.post-info {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.category-checkboxes {
+  display: inline-block;
+  margin-right: 10px;
+  label {
+    display: inline-block;
+  }
+}
+
+.user-greeting {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.user-detail {
+  font-weight: bold;
+}
+
+.user-info-details {
+  background: rgba(211, 211, 211, 0.28);
+  box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.33);
+  padding: 30px 60px;
+}
+
+.votes {
+  clear: left;
+  padding: 10px 20px;
+  margin: 0 10px 0 0;
+  text-align: center;
+  width: 60px;
+
+  a {
+    display: block;
+  }
+}
