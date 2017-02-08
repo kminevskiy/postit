@@ -4,14 +4,21 @@ module ApplicationHelper
   end
 
   def display_datetime(dt)
+    if logged_in? && !current_user.time_zone.nil?
+      dt = dt.in_time_zone(current_user.time_zone)
+    end
     dt.strftime("%m/%d/%Y %l:%M%P %Z")
   end
 
   def create_vote_path(obj, *args)
     if obj.class == Post
-      return vote_post_path(obj, args[0])
+      vote_post_path(obj, args[0])
     else
-      return vote_post_comment_path(obj[:post_id], obj, args[0])
+      vote_post_comment_path(params[:id] || params[:post_id], obj, args[0])
     end
+  end
+
+  def post_or_comment(obj)
+    obj.class == Post ? "post_" : "comment_"
   end
 end

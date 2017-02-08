@@ -5,7 +5,9 @@ class Post < ActiveRecord::Base
   has_many :categories, through: :post_categories
   has_many :votes, as: :voteable
 
-  validates :title, presence: true, length: {minimum: 5}, uniqueness: true
+  before_save :generate_slug
+
+  validates :title, presence: true, length: {minimum: 3}, uniqueness: true
   validates :url, presence: true
   validates :description, presence: true, uniqueness: true
 
@@ -19,5 +21,13 @@ class Post < ActiveRecord::Base
 
   def down_votes
     self.votes.where(vote: false).size
+  end
+
+  def generate_slug
+    self.slug = self.title.parameterize
+  end
+
+  def to_param
+    self.slug
   end
 end
