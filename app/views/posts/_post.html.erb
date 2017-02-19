@@ -10,9 +10,6 @@
     <span class="quiet">posted by</span> <%= link_to post.creator.username, user_path(post.creator) %>
     <small>at <%= display_datetime(post.created_at.localtime) %></small>
   </p>
-  <% if logged_in? %>
-    <%= link_to "Edit", edit_post_path(post), class: "edit-post" %>
-  <% end %>
   <%= link_to "#{post.comments.size} comments", post_path(post) %>
 </div>
 

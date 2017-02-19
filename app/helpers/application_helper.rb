@@ -19,6 +19,6 @@ module ApplicationHelper
   end
 
   def post_or_comment(obj)
-    obj.class == Post ? "post_" : "comment_"
+    obj.class == Post ? "post_#{obj.slug}" : "comment_#{obj.id}"
   end
 end

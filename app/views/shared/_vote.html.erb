@@ -4,7 +4,7 @@
       <i class="icon-arrow-up"></i>
     <% end %>
   <% end %>
-  <span id="<%= post_or_comment(obj) %><%= obj.id %>_votes"><%= pluralize(obj.total_votes, "vote") %></span>
+  <span id="<%= post_or_comment(obj) %>_votes"><%= pluralize(obj.total_votes, "vote") %></span>
   <% if logged_in? %>
     <%= link_to create_vote_path(obj, vote: false), method: "post", remote: true do %>
       <i class="icon-arrow-down"></i>

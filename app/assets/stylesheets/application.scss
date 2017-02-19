@@ -163,3 +163,17 @@ div.comment_votes {
 .dropdown-menu > li > a.new-category-btn {
   font-weight: bold;
 }
+
+#pagination {
+  text-align: center;
+}
+
+.posts {
+  margin: 30px 0;
+}
+
+.post-container:after {
+  display: block;
+  clear: both;
+  content: "";
+}
